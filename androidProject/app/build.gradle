@@ -1,0 +1,78 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-parcelize'
+
+android {
+    namespace "com.example.yuyaolong.yyalDemo"
+    compileSdkVersion 31
+    defaultConfig {
+        applicationId "com.example.yuyaolong.yyalDemo"
+        minSdkVersion 29
+        targetSdkVersion 31
+        versionCode 1
+        versionName "1.0"
+        shaders {
+            glslcArgs.addAll(['-c', '-g'])
+        }
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        externalNativeBuild {
+            cmake {
+                cppFlags "-frtti -fexceptions -Wno-error=format-security -std=c++17"
+                arguments "-DIMGUI_BUILD_SHARED_LIB=ON"
+                arguments "-DBUILD_TARGET_PLATFORM=Android"
+            }
+        }
+        ndk {
+            abiFilters 'armeabi-v7a', 'arm64-v8a','x86'
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    // Shader compilation directives, put glsl shaders to app/src/main/shaders
+    // android studio will pick them up and compile them into APK/assets/shaders
+    // KNOWN ISSUE:  if shaders having errors, it takes long time for gradle to timeout
+    //               but it will eventually time out and complain about shader compiling
+    externalNativeBuild {
+        cmake {
+            version "3.30.3"
+            path "../../CMakeLists.txt"
+        }
+    }
+    sourceSets {
+        main {
+            res.srcDirs = [
+                    'src/main/res/layouts/hdrMultiThread',
+                    'src/main/res/layouts/vrsPerf',
+                    'src/main/res/layouts/memLayout',
+                    'src/main/res/layouts/listview',
+                    'src/main/res/layouts/touchUI',
+                    'src/main/res'
+            ]
+            assets.srcDirs = ['../../assets']
+        }
+    }
+    ndkVersion '25.1.8937393'
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:2.0.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}
+repositories {
+    mavenCentral()
+}

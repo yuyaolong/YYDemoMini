@@ -1,0 +1,1 @@
+set(BUILD_TARGET_PLATFORM "Windows" CACHE STRING "build target platform: Windows/Android")

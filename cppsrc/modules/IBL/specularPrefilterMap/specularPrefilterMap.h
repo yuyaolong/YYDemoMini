@@ -1,0 +1,32 @@
+// Copyright 2022, YYAL.
+// SPDX-License-Identifier: BSL-1.0
+
+/*!
+ * @file
+ * @brief  This is qcom foveation module which using OpenGL ES32
+ * @author Yaolong Yu <yaolong-yu@ylab.ac.cn>
+ */
+
+#pragma once
+
+#ifdef __cplusplus
+    extern "C" {
+#endif
+
+
+void grInitSpecularPrefilterMap(void* assetMgr);
+
+// generate rbo internal
+unsigned int grProcessSpecularPrefilterMap(unsigned int srcColorTexID, //cubeMap
+                             unsigned int targetColorTexID, //cubeMap
+                             unsigned int targetDepthRbo, // will generate data internal
+                             int targetWidth,
+                             int targetHeight);
+
+
+void grReleaseSpecularPrefilterMap();
+
+#ifdef __cplusplus
+}
+#endif
+

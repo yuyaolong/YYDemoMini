@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.opengl.GLSurfaceView
+        android:id="@+id/mem_layout_glSurface"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="0dp"
+        app:layout_constraintBottom_toTopOf="@id/fovAreaAdd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/changeFocal"
+        android:layout_width="@dimen/buttonSize"
+        android:layout_height="wrap_content"
+        android:text="f0"
+        android:textSize="@dimen/buttonFontSize"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/fovAreaAdd"
+        app:layout_constraintTop_toBottomOf="@+id/mem_layout_glSurface" />
+
+    <Button
+        android:id="@+id/fovAreaAdd"
+        android:layout_width="@dimen/buttonSize"
+        android:layout_height="wrap_content"
+        android:text="A+"
+        android:textSize="@dimen/buttonFontSize"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/changeFocal"
+        app:layout_constraintRight_toLeftOf="@id/fovAreaMinus"
+        app:layout_constraintTop_toBottomOf="@+id/mem_layout_glSurface" />
+
+    <Button
+        android:id="@+id/fovAreaMinus"
+        android:layout_width="@dimen/buttonSize"
+        android:layout_height="wrap_content"
+        android:text="A-"
+        android:textSize="@dimen/buttonFontSize"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/fovAreaAdd"
+        app:layout_constraintRight_toLeftOf="@id/gainXAdd"
+        app:layout_constraintTop_toBottomOf="@+id/mem_layout_glSurface" />
+
+    <Button
+        android:id="@+id/gainXAdd"
+        android:layout_width="@dimen/buttonSize"
+        android:layout_height="wrap_content"
+        android:text="GX+"
+        android:textSize="@dimen/buttonFontSize"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/fovAreaMinus"
+        app:layout_constraintRight_toLeftOf="@id/gainXMinus"
+        app:layout_constraintTop_toBottomOf="@+id/mem_layout_glSurface" />
+
+    <Button
+        android:id="@+id/gainXMinus"
+        android:layout_width="@dimen/buttonSize"
+        android:layout_height="wrap_content"
+        android:text="GX-"
+        android:textSize="@dimen/buttonFontSize"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/gainXAdd"
+        app:layout_constraintTop_toBottomOf="@+id/mem_layout_glSurface" />
+
+    <Button
+        android:id="@+id/gainYAdd"
+        android:layout_width="@dimen/buttonSize"
+        android:layout_height="wrap_content"
+        android:text="GY+"
+        android:textSize="@dimen/buttonFontSize"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/gainXMinus"
+        app:layout_constraintRight_toLeftOf="@id/gainYMinus"
+        app:layout_constraintTop_toBottomOf="@+id/mem_layout_glSurface" />
+
+    <Button
+        android:id="@+id/gainYMinus"
+        android:layout_width="@dimen/buttonSize"
+        android:layout_height="wrap_content"
+        android:text="GY-"
+        android:textSize="@dimen/buttonFontSize"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/gainYAdd"
+        app:layout_constraintRight_toLeftOf="@id/focalXAdd"
+        app:layout_constraintTop_toBottomOf="@+id/mem_layout_glSurface" />
+
+    <Button
+        android:id="@+id/focalXAdd"
+        android:layout_width="@dimen/buttonSize"
+        android:layout_height="wrap_content"
+        android:text="FX+"
+        android:textSize="@dimen/buttonFontSize"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/gainYMinus"
+        app:layout_constraintRight_toLeftOf="@id/focalXMinus"
+        app:layout_constraintTop_toBottomOf="@+id/mem_layout_glSurface" />
+
+    <Button
+        android:id="@+id/focalXMinus"
+        android:layout_width="@dimen/buttonSize"
+        android:layout_height="wrap_content"
+        android:text="FX-"
+        android:textSize="@dimen/buttonFontSize"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/focalXAdd"
+        app:layout_constraintRight_toLeftOf="@id/focalYAdd"
+        app:layout_constraintTop_toBottomOf="@+id/mem_layout_glSurface" />
+
+    <Button
+        android:id="@+id/focalYAdd"
+        android:layout_width="@dimen/buttonSize"
+        android:layout_height="wrap_content"
+        android:text="FY+"
+        android:textSize="@dimen/buttonFontSize"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/focalXMinus"
+        app:layout_constraintRight_toLeftOf="@id/focalYMinus"
+        app:layout_constraintTop_toBottomOf="@+id/mem_layout_glSurface" />
+
+    <Button
+        android:id="@+id/focalYMinus"
+        android:layout_width="@dimen/buttonSize"
+        android:layout_height="wrap_content"
+        android:text="FY-"
+        android:textSize="@dimen/buttonFontSize"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/focalYAdd"
+        app:layout_constraintTop_toBottomOf="@+id/mem_layout_glSurface" />
+
+</android.support.constraint.ConstraintLayout>

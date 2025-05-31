@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.yuyaolong.yyalDemo">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission
+        android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name="com.example.yuyaolong.yyalDemo.foveation.FoveationActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".surfaceViewTests.SurfaceViewActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"
+            android:screenOrientation="landscape"/>
+        <activity android:name=".glSurfaceViewTests.SimpleGLActivity"
+            android:screenOrientation="landscape"/>
+        <activity android:name=".syncTest.VsyncTest"/>
+        <activity android:name=".lightCube.LightCubeActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".general3DRover.gaussianSplattingRover.GaussianSplattingRoverActivity"/>
+        <activity
+            android:name="com.example.yuyaolong.yyalDemo.appList.MainActivity"
+            android:screenOrientation="fullSensor"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,1 @@
+xcopy /y C:\Users\yaolo\proj\androidvrs\app\build\intermediates\cmake\debug\obj\arm64-v8a\libunityNativePlugin.so D:\unityProjects\unityNative\Assets\Plugins\Android
